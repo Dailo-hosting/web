@@ -1,0 +1,820 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px; /* Espaciado interno del encabezado */
+    color: #333; /* Color del texto del encabezado */
+}
+
+.Menu.container {
+    display: flex; /* Mostrar los elementos en línea */
+    justify-content: space-between; /* Distribuir los elementos horizontalmente */
+    align-items: center; /* Centrar verticalmente los elementos */
+    margin-left: 50px; /* Mover el menú hacia la izquierda */
+}
+
+.logo {
+    color: #333; /* Color del texto del logo */
+    text-decoration: none; /* Quitar decoración de subrayado */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    margin-left: 10px; /* Espacio a la izquierda */
+}
+
+
+.menu-icon {
+    display: none; /* Ocultar el icono por defecto */
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: transform 0.4s;
+}
+
+
+
+
+.navbar ul {
+    list-style-type: none; /* Quitar los marcadores de lista */
+    margin: 30px; /* Ajustar el margen a cero */
+    padding: 0; /* Ajustar el relleno a cero */
+}
+
+.navbar ul li {
+    display: inline-block; /* Mostrar los elementos de la lista en línea */
+    margin-left: 50px; /* Espacio entre elementos de la lista */
+}
+
+.navbar ul li a {
+    color: #0f0e0e; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quitar subrayado del texto */
+    font-size: 1.1rem; /* Tamaño de fuente de los enlaces */
+    transition: box-shadow 0.3s; /* Transición suave de la sombra */
+}
+
+/* Efecto de sombra al pasar el mouse sobre los elementos del menú */
+.navbar ul li a:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra al pasar el mouse */
+}
+
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+/* Titulo */
+h1 {
+    text-align: center;
+    color: #f50606;
+    margin-top: 20px;
+}
+
+
+.botones-mobile {
+    display: none;
+}
+
+
+
+
+
+/* Contenedor de filtros y productos */
+.filtros-y-productos {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Filtros */
+.filtros {
+    width: 18%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    max-height: 410px; /* Ajusta la altura máxima según necesites */
+
+}
+
+.filtros h2 {
+    margin-bottom: 10px;
+}
+
+.filtros label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.filtros input,
+.filtros select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.filtros button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filtros button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.producto-card a,
+.producto-card a:link,
+.producto-card a:visited,
+.producto-card a:hover,
+.producto-card a:active {
+    text-decoration: none;
+}
+
+.producto-card .marca,
+.producto-card .nombre,
+.producto-card .precio-descuento,
+
+.producto-card .precio {
+    text-decoration: none;
+}
+
+
+
+
+
+/* Contenedor de productos */
+.productos {
+    width: 78%;
+}
+
+/* Contenedor de productos */
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ajustar la distribución */
+    padding: 20px;
+    max-width: 1400px; /* Ajustar el ancho máximo según tus necesidades */
+    width: 106%; /* Ajustar el ancho al máximo disponible */
+    margin: 0 auto; /* Centrar el contenedor */
+    margin-left: -55px; /* Mover los productos un poco a la izquierda */
+    margin-right: -15px; /* Mover los productos un poco a la derecha */
+}
+
+/* Tarjeta de producto */
+/* Tarjeta de producto */
+.producto-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px; /* Ajustar los márgenes */
+    padding: 15px;
+    text-align: left;
+    width: calc(25% - 30px); /* Calcula el ancho para 4 productos por fila */
+    position: relative;
+    background: #fff;
+}
+
+
+
+/* Ajuste de la imagen dentro de la tarjeta del producto */
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    max-height: 200px; /* Ajusta la altura máxima según sea necesario */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse */
+    margin-bottom: 15px;
+}
+
+/* Ajuste de la imagen dentro del contenedor de imágenes */
+.producto-card .imagenes-container img {
+    width: 100%;
+    height: 200px;
+    max-height: 200px; /* Ajusta la altura máxima según sea necesario */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse */
+    margin-bottom: 15px;
+}
+
+
+
+.producto-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: normal;
+    color: #000000;
+    word-wrap: break-word;
+    text-align: left; /* Alineación a la izquierda */
+    white-space: normal; /* Permitir el desbordamiento normal del texto */
+}
+
+.producto-card p {
+    margin: 5px 0;
+    color: #666;
+    text-decoration: line-through;
+}
+
+/* Contenedor de precios */
+.precio-container {
+    
+    text-align: left; /* Alineación a la izquierda */
+    
+}
+
+.precio-descuento {
+    color: rgb(53, 52, 52);
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 20px; /* Tamaño más grande para el precio */
+
+}
+
+.precio-original {
+    text-decoration: line-through;
+    color: gray;
+    
+}
+
+.precio{
+    color: rgb(56, 54, 54);
+    font-weight: bold;
+    font-size: 20px; /* Tamaño más grande para el precio */
+
+    
+}
+
+.descuento {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+
+
+
+
+/* Ordenar por */
+.ordenar-por {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.ordenar-por label {
+    margin-right: 10px;
+}
+
+.ordenar-por select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+
+
+.paginacion {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.paginacion ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.paginacion ul li {
+    display: inline;
+}
+
+.paginacion ul li a, 
+.paginacion ul li span {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-right: 1px solid #ddd;
+    display: inline-block;
+}
+
+.paginacion ul li a:hover, 
+.paginacion ul li a:focus {
+    background-color: #ddd;
+}
+
+.paginacion ul li span.actual {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.paginacion ul li:last-child a, 
+.paginacion ul li:last-child span {
+    border-right: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-column h4 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.footer-column p,
+.footer-column ul {
+    margin-bottom: 15px;
+}
+
+.footer-column p i,
+.footer-column ul li a i {
+    margin-right: 10px;
+    color: #666;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    color: #007bff;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 0.9rem;
+        margin-left: 80px;
+        flex: 1;
+    }
+
+    .logo img {
+        max-width: 100px;
+        height: auto;
+        display: block;
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar el icono del menú en dispositivos móviles */
+        padding: 10px;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .menu-icon span {
+        width: 25px; /* Ancho de las barras del menú */
+        height: 3px; /* Altura de las barras del menú */
+        background-color: #333; /* Color de las barras del menú */
+        margin-bottom: 5px; /* Espacio entre las barras del menú */
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+    }
+
+    .menu-icon span:last-child {
+        margin-bottom: 0; /* Sin margen inferior para la última barra */
+    }
+
+    /* Efecto de transición al abrir el menú */
+    .menu-icon.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Rotación de la primera barra */
+    }
+
+    .menu-icon.active span:nth-child(2) {
+        opacity: 0; /* Ocultar la segunda barra */
+    }
+
+    .menu-icon.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* Rotación de la tercera barra */
+    }
+
+    /* Estilos para el menú desplegable */
+    .mobile-menu {
+        display: none; /* Ocultar el mobile-menu inicialmente */
+        position: fixed; /* Posición fija para mantenerlo visible */
+        top: 0; /* Alineación en la parte superior */
+        left: 0; /* Alineación a la izquierda */
+        width: 100%; /* Ancho completo */
+        height: 100%; /* Altura completa */
+        background-color: #fff; /* Color de fondo */
+        z-index: 1000; /* Z-index alto para estar encima de otros elementos */
+        flex-direction: column; /* Alinear elementos verticalmente */
+        justify-content: center; /* Centrar verticalmente */
+        align-items: center; /* Centrar horizontalmente */
+    }
+
+    .mobile-menu.active {
+        display: flex; /* Mostrar el mobile-menu activo */
+    }
+
+    .close-btn {
+        position: absolute; /* Posición absoluta para el botón de cerrar */
+        top: 10px; /* Espacio desde la parte superior */
+        right: 10px; /* Espacio desde la derecha */
+        background: transparent; /* Fondo transparente */
+        border: none; /* Sin borde */
+        font-size: 24px; /* Tamaño de fuente */
+        cursor: pointer; /* Cursor de puntero */
+    }
+
+    .navbar{
+        display: none;
+    }
+
+    .bar ul {
+        list-style-type: none; /* Quitar los marcadores de lista */
+        padding: 0; /* Eliminar el relleno */
+        text-align: center; /* Alinear texto al centro */
+    }
+
+    .bar ul li {
+        margin: 10px 0; /* Margen entre elementos del menú */
+    }
+
+    .bar ul li a {
+        color: #333; /* Color del texto del menú */
+        text-decoration: none; /* Quitar subrayado */
+        font-size: 1rem; /* Tamaño de fuente */
+        display: block; /* Mostrar como bloque */
+        padding: 10px; /* Relleno interno */
+        transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+    }
+
+    .bar ul li a:hover {
+        background-color: #eee; /* Color de fondo al pasar el mouse */
+    }
+
+
+
+
+
+
+
+    /* Botones Filtrar y Ordenar */
+    .botones-mobile {
+        display: flex;
+        justify-content: space-around;
+        margin: 10px 0;
+    }
+
+    .botones-mobile button {
+        padding: 10px;
+        background-color: #828682;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 45%; /* Ajustar el ancho según el diseño */
+        margin-left: -200px; /* Mover un poco a la izquierda */
+
+    }
+
+    /* Filtros */
+    .filtros {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80%; /* Ancho ajustable según diseño */
+        max-width: 300px; /* Ancho máximo según diseño */
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1100;
+    }
+
+    .filtros.active {
+        transform: translateX(0);
+    }
+
+    .cerrar-filtro {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 1.2em;
+        color: #333;
+    }
+
+
+
+    .ordenar-por {
+        padding: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-end; /* Mover contenido a la derecha */
+        align-items: center; /* Alinear verticalmente si es necesario */
+    }
+
+    .ordenar-por label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+
+    }
+
+    .ordenar-por select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    
+
+    
+
+    
+
+    /* Titulo */
+    h1 {
+        text-align: center; /* Alinear texto al centro */
+        color: #e01414; /* Color rojo para título */
+        margin-top: 10px; /* Margen superior */
+        font-size: 1.5rem; /* Tamaño de fuente */
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Contenedor de productos */
+    .productos {
+        width: 100%; /* Ancho completo */
+    }
+
+    /* Contenedor de productos */
+    .productos-container {
+        padding: 10px; /* Relleno interno */
+        width: 100%; /* Ancho completo */
+        margin: 0 auto; /* Margen automático izquierda-derecha para centrar */
+        display: flex; /* Mostrar productos en una fila */
+        flex-wrap: wrap; /* Envolver productos a múltiples líneas */
+        justify-content: space-between; /* Justificar espacio entre productos */
+    }
+
+    .producto-card {
+        width: calc(50% - 5px); /* Ancho del 50% menos margen para dos productos por fila */
+        margin-right: 5px; /* Margen derecho entre productos */
+        margin-left: 0; /* Eliminar margen izquierdo */
+    }
+
+    .producto-card:nth-child(even) {
+        margin-right: 0; /* Eliminar margen derecho del segundo producto en la fila */
+    }
+
+    
+
+    /* Ajuste de la imagen dentro de la tarjeta del producto */
+    .producto-card img {
+        width: 100%;
+        height: 200px;
+        max-height: 200px; /* Ajusta la altura máxima según sea necesario */
+        object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse */
+        margin-bottom: 15px;
+    }
+
+    /* Ajuste de la imagen dentro del contenedor de imágenes */
+.producto-card .imagenes-container img {
+    width: 100%;
+    height: 200px;
+    max-height: 200px; /* Ajusta la altura máxima según sea necesario */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse */
+    margin-bottom: 15px;
+}
+
+    .producto-card h2 {
+        font-size: 16px; /* Tamaño de fuente */
+        margin: 8px 0; /* Margen superior e inferior */
+    }
+
+    .precio-container {
+        justify-content: flex-start; /* Justificar contenido al inicio */
+        text-align: left; /* Alinear texto a la izquierda */
+    }
+
+    .precio-descuento {
+        margin-right: 5px; /* Margen derecho */
+    }
+
+    .precio-original {
+        font-size: 0.9rem; /* Tamaño de fuente */
+    }
+
+    .precio-normal {
+        font-size: 1rem; /* Tamaño de fuente */
+    }
+
+    .descuento-badge {
+        top: 5px; /* Posición desde arriba */
+        left: 5px; /* Posición desde la izquierda */
+        padding: 3px; /* Relleno interno */
+        font-size: 0.8rem; /* Tamaño de fuente */
+    }
+
+    
+    
+
+    /* Estilos para la paginación */
+    .paginacion ul {
+        list-style: none; /* Sin viñetas */
+        display: flex; /* Mostrar elementos en línea */
+        flex-wrap: wrap; /* Envolver elementos */
+        justify-content: center; /* Justificar al centro */
+        padding: 0px; /* Relleno cero */
+        background-color: transparent; /* Fondo transparente */
+        box-shadow: none; /* Sin sombra */
+    }
+
+    .paginacion ul li {
+        display: inline; /* Mostrar elementos en línea */
+    }
+
+    .paginacion ul li a,
+    .paginacion ul li span {
+        color: #333; /* Color de texto */
+        padding: 8px 12px; /* Relleno interno */
+        font-size: 0.9rem; /* Tamaño de fuente */
+        text-decoration: none; /* Sin subrayado */
+        background-color: #f4f4f4; /* Fondo gris claro */
+        display: inline-block; /* Mostrar en bloque */
+    }
+
+    .paginacion ul li a:hover,
+    .paginacion ul li a:focus {
+        background-color: #ddd; /* Color de fondo al pasar el ratón o enfocar */
+    }
+
+    .paginacion ul li span.actual {
+        background-color: #007bff; /* Color de fondo azul */
+        color: white; /* Color de texto blanco */
+        font-weight: bold; /* Negrita */
+        font-size: 1rem; /* Tamaño de fuente */
+    }
+
+    /* Estilos para el pie de página */
+    .footer {
+        padding: 20px 0; /* Relleno interior */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Dirección de columna */
+        align-items: center; /* Alinear al centro */
+    }
+
+    .footer-column {
+        width: 100%; /* Ancho completo */
+        text-align: center; /* Alinear al centro */
+        margin-bottom: 20px; /* Margen inferior */
+    }
+
+    .footer-column h4 {
+        margin-bottom: 10px; /* Margen inferior */
+    }
+
+    .footer-column p,
+    .footer-column ul {
+        margin-bottom: 10px; /* Margen inferior */
+    }
+
+    .footer-column p i,
+    .footer-column ul li a i {
+        display: none; /* Ocultar iconos */
+    }
+}
+
+
